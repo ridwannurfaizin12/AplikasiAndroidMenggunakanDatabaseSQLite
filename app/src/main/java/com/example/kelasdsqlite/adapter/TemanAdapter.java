@@ -31,7 +31,7 @@ public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TemanViewHolder holder, int position) {
+    public void onBindViewHolder( TemanViewHolder holder, int position) {
         String nm, tlp;
         nm = listData.get(position).getNama();
         tlp = listData.get(position).getTelpon();
@@ -40,6 +40,12 @@ public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHol
         holder.namaTxt.setTextSize(20);
         holder.namaTxt.setText(nm);
         holder.telponTxt.setText(tlp);
+        holder.cardku.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                return true;
+            }
+        });
     }
 
     @Override
